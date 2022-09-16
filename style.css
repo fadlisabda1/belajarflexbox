@@ -4,99 +4,118 @@
 }
 
 body {
-  font-family: "Pacifico", cursive;
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
 
+/*Navbar*/
 nav {
-  background-image: linear-gradient(to right, rgb(249, 168, 247), rgb(128, 0, 111));
-  letter-spacing: 5px;
   display: flex;
+  background-color: BlueViolet;
   justify-content: space-around;
-  color: black;
+  /*padding: 20px 0;*/
+  color: DeepSkyBlue;
   height: 50px;
   align-items: center;
 }
 
-ul {
-  list-style: none;
+nav .logo {
+  font-family: "Pacifico", cursive;
+  letter-spacing: 3px;
+}
+
+nav ul {
   display: flex;
-  justify-content: space-between;
+  list-style: none;
   width: 40%;
+  justify-content: space-between;
 }
 
-ul li a {
-  color: rgb(87, 202, 247);
+nav ul li a {
+  color: DeepSkyBlue;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 0.8em;
 }
 
-ul li a:hover {
-  color: white;
+nav ul li a:hover {
+  color: WhiteSmoke;
 }
 
+/*Hamburger Menu*/
 .menu-toggle {
-  position: relative;
   display: none;
-  align-items: center;
   flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
 }
 
-input {
+.menu-toggle input {
   position: absolute;
-  width: 45px;
-  height: 40px;
-  left: -3px;
+  width: 40px;
+  height: 28px;
   opacity: 0;
+  left: -5px;
+  top: -3px;
   cursor: pointer;
   z-index: 2;
 }
 
-span {
-  border-radius: 1px;
-  border: 3px solid rgb(85, 145, 247);
-  width: 30px;
-  margin: 3px 0px;
-  transition: 0.5s ease-in;
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: DeepSkyBlue;
+  border-radius: 3px;
+  transition: 0.5s;
 }
 
-span:nth-child(2) {
+/*Hamburger Menu Animation*/
+.menu-toggle span:nth-child(2) {
   transform-origin: 0 0;
 }
 
-span:nth-child(4) {
+.menu-toggle span:nth-child(4) {
   transform-origin: 0 100%;
 }
 
-input:checked ~ span:nth-child(2) {
-  transform: rotate(45deg) translate(-1px, 1px);
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
   background-color: white;
 }
 
-input:checked ~ span:nth-child(4) {
-  transform: rotate(-45deg) translate(-1px, 0px);
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
   background-color: white;
 }
 
-input:checked ~ span:nth-child(3) {
+.menu-toggle input:checked ~ span:nth-child(3) {
   transform: scale(0);
   opacity: 0;
 }
 
+/*Responsive Breakpoint*/
+
+/*Ukuran Tablet*/
 @media screen and (max-width: 768px) {
-  ul {
-    width: 70%;
+  nav ul {
+    width: 50%;
   }
 }
 
+/*Ukuran Mobile*/
 @media screen and (max-width: 576px) {
-  ul {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
     position: absolute;
     right: 0;
     top: 0;
     height: 100vh;
     flex-direction: column;
-    background-color: rgb(67, 67, 249);
+    background: BlueViolet;
     align-items: center;
     justify-content: space-evenly;
     z-index: -1;
@@ -105,11 +124,7 @@ input:checked ~ span:nth-child(3) {
     transition: 1s;
     opacity: 0;
   }
-  .menu-toggle {
-    display: flex;
-  }
-
-  ul.slide {
+  nav ul.slide {
     opacity: 1;
     transform: translateX(0);
   }

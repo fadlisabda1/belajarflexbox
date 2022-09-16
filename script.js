@@ -1,5 +1,6 @@
-const input = document.querySelector(".menu-toggle input");
-const span = document.querySelector("ul");
-input.addEventListener("click", function () {
-  span.classList.toggle("slide");
+const menuToggle = document.querySelector(".menu-toggle input");
+const nav = document.querySelector("nav ul");
+
+menuToggle.addEventListener("click", function () {
+  nav.classList.toggle("slide");
 });
