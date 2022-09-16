@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pacifico", cursive;
+  overflow-x: hidden;
+}
+
+nav {
+  background-image: linear-gradient(to right, rgb(249, 168, 247), rgb(128, 0, 111));
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  height: 50px;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+ul li a {
+  color: rgb(87, 202, 247);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+ul li a:hover {
+  color: white;
+}
+
+.menu-toggle {
+  position: relative;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  left: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+span {
+  border-radius: 1px;
+  border: 3px solid rgb(85, 145, 247);
+  width: 30px;
+  margin: 3px 0px;
+  transition: 0.5s ease-in;
+}
+
+span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, 1px);
+  background-color: white;
+}
+
+input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0px);
+  background-color: white;
+}
+
+input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  ul {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    background-color: rgb(67, 67, 249);
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: -1;
+    width: 80%;
+    transform: translate(100%);
+    transition: 1s;
+    opacity: 0;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+
+  ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
