@@ -123,11 +123,17 @@ table {
   border-spacing: 0;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
 /*Navbar*/
 nav {
   display: flex;
   background-color: BlueViolet;
   justify-content: space-around;
+  /*padding: 20px 0;*/
   color: DeepSkyBlue;
   height: 50px;
   align-items: center;
