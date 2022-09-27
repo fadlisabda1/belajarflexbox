@@ -146,6 +146,14 @@ nav {
   filter: brightness(1.2) drop-shadow(1px 1px 1px black);
 }
 
+.profil img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid #00e5ff;
+  background-color: #a534ff;
+}
+
 nav .logo {
   font-family: "Pacifico", cursive;
   letter-spacing: 3px;
@@ -164,6 +172,19 @@ nav ul li a {
   color: DeepSkyBlue;
   text-decoration: none;
   font-size: 25px;
+}
+
+nav ul li a:hover {
+  animation: besarinLink 2s ease infinite alternate forwards;
+}
+
+@keyframes besarinLink {
+  from {
+    font-size: 30px;
+  }
+  to {
+    font-size: 35px;
+  }
 }
 
 nav ul li a:hover {
