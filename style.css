@@ -140,6 +140,7 @@ nav {
   display: flex;
   background-color: BlueViolet;
   justify-content: space-around;
+  /*padding: 20px 0;*/
   color: DeepSkyBlue;
   height: 50px;
   align-items: center;
